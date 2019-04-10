@@ -17,7 +17,6 @@ def _import_module(name):
 
 
 class Revision(object):
-
     __slots__ = ['division_schema', 'name']
 
     def __init__(self, name, division_schema):
@@ -72,11 +71,13 @@ class Revision(object):
             for part in dcode.split(code)
             if part
         ]
+        # MCA源缺失汇总码
+        # https://github.com/cn/GB2260/issues/50#issuecomment-400289869
+        names = [x for x in names if x]
         return ' '.join(names)
 
 
 class Source(object):
-
     __slots__ = ['all_revisions', 'name']
 
     def __init__(self, name):
