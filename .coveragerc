@@ -1,0 +1,2 @@
+[run]
+omit = gb2260_v2/data/*

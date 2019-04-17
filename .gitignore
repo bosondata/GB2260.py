@@ -9,4 +9,6 @@ __pycache__
 /build
 /dist
 /htmlcov
-/gb2260/data.py
+/.idea
+/.python-version
+.pytest_cache/

@@ -1,3 +1,4 @@
 [submodule "data"]
-	path = data
-	url = https://github.com/cn/GB2260.git
+    path = data
+    url = https://github.com/cn/GB2260.git
+    branch = develop

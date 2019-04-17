@@ -1,6 +1,7 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def fread(filepath, skip_lines=0):
@@ -9,12 +10,10 @@ def fread(filepath, skip_lines=0):
 
 
 setup(
-    name='GB2260',
-    version='0.4.1',
-    author='Jiangge Zhang',
-    author_email='tonyseek@gmail.com',
-    url='https://github.com/cn/GB2260.py',
-    packages=['gb2260'],
+    name='GB2260-v2',
+    version='0.2.0',
+    url='https://github.com/bosndata/GB2260.py',
+    packages=find_packages(exclude=('tests', 'tests.*')),
     description='The Python implementation for looking up the Chinese '
                 'administrative divisions.',
     long_description=fread('README.rst', skip_lines=2),
@@ -29,6 +28,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ]
