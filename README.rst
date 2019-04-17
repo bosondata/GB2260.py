@@ -1,6 +1,6 @@
 |GB/T 2260| |Build Status| |Coverage Status| |PyPI Version| |Wheel Status|
 
-GB2260
+GB2260-v2
 ======
 
 The Python implementation for looking up the Chinese administrative divisions.
@@ -11,22 +11,23 @@ Installation
 
 ::
 
-    $ pip install GB2260
+    $ pip install GB2260-v2
 
 
 Basic Usage
 -----------
 
 The way to look up a administrative division by its GB2260 code is
-the basic interface ``gb2260.get(code)``:
+the basic interface:
 
 .. code-block:: python
 
-    >>> import gb2260
+    >>> from gb2260_v2 import GB2260
+    >>> gb2260 = GB2260()
     >>>
-    >>> division = gb2260.get(360426)
+    >>> division = gb2260.get('360426')
     >>> print(division)
-    <gb2260.Division 360426 江西省/九江市/德安县>
+    <Division 360426 德安县 rev=201801>
 
 The data of a division is accessible to interfaces as following:
 
@@ -43,24 +44,11 @@ The data of a division is accessible to interfaces as following:
     >>> division.is_prefecture
     False
     >>> print(division.province)
-    <gb2260.Division 360000 江西省>
+    <Division 360000 江西省 rev=201801>
     >>> print(division.prefecture)
-    <gb2260.Division 360400 江西省/九江市>
-    >>> print(division.county)
-    <gb2260.Division 360426 江西省/九江市/德安县>
+    <Division 360400 九江市 rev=201801>
 
-The hierarchic divisions could be generated with a iterator method:
-
-.. code-block:: python
-
-    >>> division.stack()
-    <generator object stack at 0x103e26a50>
-    >>> for current in division.stack():
-    ...     print(u'{0} {1}'.format(current.name, current.code))
-    江西省 360000
-    九江市 360400
-    德安县 360426
-
+See `Specification v0.2 <https://github.com/cn/GB2260/blob/develop/spec.md>`_ for details.
 
 Issues
 ------
