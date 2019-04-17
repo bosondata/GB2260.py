@@ -12,4 +12,3 @@ __pycache__
 /.idea
 /.python-version
 .pytest_cache/
-gb2260/data/

@@ -1,11 +1,10 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import, unicode_literals
 
 import sys
 
-
 PY2 = sys.version_info[0] == 2
-
 
 if PY2:
     text_type = unicode

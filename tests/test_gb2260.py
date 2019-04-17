@@ -1,10 +1,11 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import, unicode_literals
 
 import pytest
 
-from gb2260.revision import Revision, Source
-from gb2260.gb2260 import GB2260
+from gb2260_v2.gb2260 import GB2260
+from gb2260_v2.revision import Revision, Source
 
 
 @pytest.fixture

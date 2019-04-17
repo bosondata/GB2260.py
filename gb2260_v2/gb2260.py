@@ -1,14 +1,14 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
 
-from gb2260.revision import Source
+from __future__ import absolute_import, unicode_literals
+
+from gb2260_v2.revision import Source
 
 
 # GB2260 is mainly a proxy object for Source & Revision
 
 
 class GB2260(object):
-
     source = Source('curated')
 
     __slots__ = ['revision']

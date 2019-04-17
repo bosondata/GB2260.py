@@ -6,17 +6,17 @@ TOX := tox
 
 all: build
 
-build: gb2260/data/__init__.py
+build: gb2260_v2/data/__init__.py
 	$(PYTHON) setup.py sdist bdist_wheel
 
-test: gb2260/data/__init__.py
+test: gb2260_v2/data/__init__.py
 	$(PYTEST)
 
-test-all: gb2260/data/__init__.py
+test-all: gb2260_v2/data/__init__.py
 	$(TOX)
 
 clean:
-	rm -rf dist build gb2260/data/
+	rm -rf dist build *.egg-info gb2260_v2/data/
 
-gb2260/data/__init__.py: data/revisions.json
+gb2260_v2/data/__init__.py: data/revisions.json
 	$(PYTHON) generate.py $?

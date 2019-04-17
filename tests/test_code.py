@@ -1,10 +1,11 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import, unicode_literals
 
 import pytest
 
-import gb2260.code as dcode
-from gb2260.exceptions import InvalidCode
+import gb2260_v2.code as dcode
+from gb2260_v2.exceptions import InvalidCode
 
 
 class TestCodePattern(object):

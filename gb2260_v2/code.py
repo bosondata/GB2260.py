@@ -1,10 +1,10 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import, unicode_literals
 
 import re
 
-from gb2260.exceptions import InvalidCode
-
+from gb2260_v2.exceptions import InvalidCode
 
 # GB/T 2260 conformant code pattern.
 # Every two digits form a province / prefecture / county layer subcode.
@@ -12,7 +12,6 @@ from gb2260.exceptions import InvalidCode
 #       with a specific revision.
 CODE_PATTERN = re.compile(
     r'^(?P<province>\d\d)(?P<prefecture>\d\d)(?P<county>\d\d)$')
-
 
 # The following province / prefecture / county code patterns are from the Spec.
 # Subcode 00 is considered special, denoting the upper level division.

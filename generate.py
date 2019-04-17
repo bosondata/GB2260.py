@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """
 A script to generate the data module.
@@ -12,12 +13,10 @@ import json
 import os
 import sys
 
-
 if sys.version_info[0] == 2:
     imap = itertools.imap
 else:
     imap = map
-
 
 TAB_CHAR = ' ' * 4
 
@@ -89,7 +88,7 @@ def main():
 
     revisions = gb_revisions | stats_revisions | mca_revisions
 
-    output_dir = os.path.join('gb2260', 'data')
+    output_dir = os.path.join('gb2260_v2', 'data')
     source_dir = os.path.join(output_dir, 'curated')
 
     if not os.path.exists(output_dir):

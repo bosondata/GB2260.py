@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import unicode_literals
+
+from __future__ import absolute_import, unicode_literals
 
 import pytest
 
-from gb2260.exceptions import RevisionNotFound, SourceNotFound
-from gb2260.revision import Revision, Source
+from gb2260_v2.exceptions import RevisionNotFound, SourceNotFound
+from gb2260_v2.revision import Revision, Source
 
 
 @pytest.fixture
 def mocked_source(mocker):
-    source = mocker.patch('gb2260.data.curated')
+    source = mocker.patch('gb2260_v2.data.curated')
     source.revisions = ['198012', '200212']
     return source
 
 
 @pytest.fixture
 def mocked_revision(mocker, mocked_source):
-    revision = mocker.patch('gb2260.data.curated.revision_198012')
+    revision = mocker.patch('gb2260_v2.data.curated.revision_198012')
     revision.name = '198012'
     revision.division_schema = {
         '990000': '测试省',

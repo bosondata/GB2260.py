@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import unicode_literals
+
+from __future__ import absolute_import, unicode_literals
 
 import pytest
 
-from gb2260.division import Division
-from gb2260.revision import Revision
+from gb2260_v2.division import Division
+from gb2260_v2.revision import Revision
 
 
 @pytest.fixture
@@ -60,18 +60,18 @@ def test_description(revision, division):
 
 
 def test_is_province(mocker, division):
-    mocked = mocker.patch('gb2260.code.PROVINCE_CODE_PATTERN')
+    mocked = mocker.patch('gb2260_v2.code.PROVINCE_CODE_PATTERN')
     division.is_province
     mocked.match.assert_called_once_with(division.code)
 
 
 def test_is_prefecture(mocker, division):
-    mocked = mocker.patch('gb2260.code.PREFECTURE_CODE_PATTERN')
+    mocked = mocker.patch('gb2260_v2.code.PREFECTURE_CODE_PATTERN')
     division.is_prefecture
     mocked.match.assert_called_once_with(division.code)
 
 
 def test_is_county(mocker, division):
-    mocked = mocker.patch('gb2260.code.COUNTY_CODE_PATTERN')
+    mocked = mocker.patch('gb2260_v2.code.COUNTY_CODE_PATTERN')
     division.is_county
     mocked.match.assert_called_once_with(division.code)

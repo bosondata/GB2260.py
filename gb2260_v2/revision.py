@@ -1,10 +1,11 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
 
-import gb2260.code as dcode
-from gb2260._compat import ensure_text, iteritems
-from gb2260.division import Division
-from gb2260.exceptions import RevisionNotFound, SourceNotFound
+from __future__ import absolute_import, unicode_literals
+
+import gb2260_v2.code as dcode
+from gb2260_v2._compat import ensure_text, iteritems
+from gb2260_v2.division import Division
+from gb2260_v2.exceptions import RevisionNotFound, SourceNotFound
 
 
 def _import_module(name):
@@ -81,7 +82,7 @@ class Source(object):
     __slots__ = ['all_revisions', 'name']
 
     def __init__(self, name):
-        module_name = 'gb2260.data.{0}'.format(name)
+        module_name = 'gb2260_v2.data.{0}'.format(name)
         try:
             module = _import_module(module_name)
         except ImportError:
@@ -95,7 +96,7 @@ class Source(object):
         return self.all_revisions[0]
 
     def load_revision(self, name):
-        module_name = 'gb2260.data.{0}.revision_{1}'.format(self.name, name)
+        module_name = 'gb2260_v2.data.{0}.revision_{1}'.format(self.name, name)
         try:
             module = _import_module(module_name)
         except ImportError:

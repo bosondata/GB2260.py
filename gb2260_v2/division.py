@@ -1,12 +1,11 @@
-from __future__ import absolute_import
-from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
 
-import gb2260.code as dcode
-from gb2260._compat import ensure_str
+import gb2260_v2.code as dcode
+from gb2260_v2._compat import ensure_str
 
 
 class Division(object):
-
     __slots__ = ['_code', '_name', '_revision']
 
     def __init__(self, code, name, revision):
