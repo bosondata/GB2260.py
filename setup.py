@@ -11,12 +11,11 @@ def fread(filepath, skip_lines=0):
 
 setup(
     name='GB2260-v2',
-    version='0.2.0',
-    url='https://github.com/bosndata/GB2260.py',
+    version='0.2.1',
+    url='https://github.com/bosondata/GB2260.py',
     packages=find_packages(exclude=('tests', 'tests.*')),
     description='The Python implementation for looking up the Chinese '
                 'administrative divisions.',
-    long_description=fread('README.rst', skip_lines=2),
     license='BSD',
     include_package_data=True,
     classifiers=[
